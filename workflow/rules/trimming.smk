@@ -20,7 +20,7 @@ rule cutadapt_pipe:
         "logs/pipe-fastqs/catadapt/{sample}-{unit}.{fq}.{ext}.log",
     wildcard_constraints:
         ext=r"fastq|fastq\.gz",
-    threads: 0  # this does not need CPU
+    threads: 1  # this does not need CPU but added for slurm
     shell:
         """
         echo 'cat {input} {output} 2> {log}'
