@@ -9,6 +9,9 @@ rule get_sra:
 
 
 rule cutadapt_pipe:
+    """
+    file is copied and run in the subsequent jobs simultaneously with pipe
+    """
     input:
         get_cutadapt_pipe_input,
     output:
@@ -19,7 +22,7 @@ rule cutadapt_pipe:
         ext=r"fastq|fastq\.gz",
     threads: 0  # this does not need CPU
     shell:
-        "cat {input} > {output} 2> {log}"
+        "cat {input} {output} 2> {log}"
 
 
 rule cutadapt_pe:
