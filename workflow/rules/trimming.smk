@@ -22,8 +22,10 @@ rule cutadapt_pipe:
         ext=r"fastq|fastq\.gz",
     threads: 0  # this does not need CPU
     shell:
-        "cat {input} {output} 2> {log}"
-
+        """
+        echo 'cat {input} {output} 2> {log}'
+        cat {input} {output} 2> {log}
+        """
 
 rule cutadapt_pe:
     input:
