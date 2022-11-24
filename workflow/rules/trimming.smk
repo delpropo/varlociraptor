@@ -22,7 +22,7 @@ rule cutadapt_pipe:
         ext=r"fastq|fastq\.gz",
     threads: 0  # this does not need CPU.  May need to be added for slurm
     shell:
-        "cat {input} {output} 2> {log}"
+        "cat {input} > {output} 2> {log}"
         
 
 rule cutadapt_pe:
