@@ -9,9 +9,6 @@ rule get_sra:
 
 
 rule cutadapt_pipe:
-    """
-    file is copied and run in the subsequent jobs simultaneously with pipe
-    """
     input:
         get_cutadapt_pipe_input,
     output:
