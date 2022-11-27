@@ -18,8 +18,10 @@ rule cutadapt_pipe:
     wildcard_constraints:
         ext=r"fastq|fastq\.gz",
     threads: 0  # this does not need CPU
-    shell:
-        "cat {input} > {output} 2> {log}"
+    run:
+        print("working on understanding cutadapt")
+        shell("echo '{input} {output}'")
+        shell("cat {input} > {output} 2> {log}")
 
 
 rule cutadapt_pe:
