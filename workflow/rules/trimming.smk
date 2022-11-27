@@ -21,7 +21,7 @@ rule cutadapt_pipe:
     run:
         print("working on understanding cutadapt")
         shell("echo '{input} {output}'")
-        shell("cat {input} > {output} 2> {log}")
+        # shell("cat {input} > {output} 2> {log}")
 
 
 rule cutadapt_pe:
